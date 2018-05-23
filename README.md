@@ -22,3 +22,15 @@ fun main(args: Array<String>){
   StrengthCalculations.EpleyMax(100.0,10)
 }
 ```
+#### Java Example
+```java
+import com.e.bunu.strengthcalc.*
+
+public class Main{
+  public void main(String[] args){
+    StrengthCalculations.INSTANCE.EpleyMax(100.0,10)
+    //or
+    StrengthCalculations.EpleyMax(100.0,10)
+  }
+}
+```
