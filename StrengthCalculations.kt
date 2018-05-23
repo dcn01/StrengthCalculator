@@ -2,16 +2,17 @@ package com.e.bunu.strengthcalc
 
 object StrengthCalculations {
     private val CONVERSION_FACTOR: Double = 2.25
-    fun toKG(lbs: Double): Double {
+
+    @JvmStatic fun toKG(lbs: Double): Double {
         return lbs / CONVERSION_FACTOR
     }
 
-    fun toLBS(kg: Double): Double {
+    @JvmStatic fun toLBS(kg: Double): Double {
         return kg * CONVERSION_FACTOR
     }
 
     //Different formulas to calculate maxes
-    fun EpleyMax(weight: Double, reps: Int): Double {
+    @JvmStatic fun EpleyMax(weight: Double, reps: Int): Double {
         if (weight < 1) throw IllegalArgumentException("Has to be positive weight")
 
         var _reps: Int = when {
@@ -23,7 +24,7 @@ object StrengthCalculations {
         return weight * (1.0 + (_reps / 30.0))
     }
 
-    fun BrzyckiMax(weight: Double, reps: Int): Double {
+    @JvmStatic fun BrzyckiMax(weight: Double, reps: Int): Double {
         if (weight < 1) throw IllegalArgumentException("Has to be positive weight")
 
         var _reps: Int = when {
@@ -35,7 +36,7 @@ object StrengthCalculations {
         return weight * (36.0 / (37.0 - _reps))
     }
 
-    fun McGlothinMax(weight: Double, reps: Int): Double {
+    @JvmStatic fun McGlothinMax(weight: Double, reps: Int): Double {
         if (weight < 1) throw IllegalArgumentException("Has to be positive weight")
 
         var _reps: Int = when {
@@ -46,7 +47,7 @@ object StrengthCalculations {
         return (100.0 * weight) / (101.3 - 2.67123 * _reps)
     }
 
-    fun LombardiMax(weight: Double, reps: Int): Double {
+    @JvmStatic fun LombardiMax(weight: Double, reps: Int): Double {
         if (weight < 1) throw IllegalArgumentException("Has to be positive weight")
 
         var _reps: Double = when {
@@ -56,7 +57,7 @@ object StrengthCalculations {
         return weight * Math.pow(_reps, .10)
     }
 
-    fun MayhewMax(weight: Double, reps: Int): Double {
+    @JvmStatic fun MayhewMax(weight: Double, reps: Int): Double {
         if (weight < 1) throw IllegalArgumentException("Has to be positive weight")
 
         var _reps: Int = when {
@@ -67,7 +68,7 @@ object StrengthCalculations {
         return (100.0 * weight) / (52.2 + 41.9 * Math.pow(Math.E, (-.055 * _reps)))
     }
 
-    fun OConnerMax(weight: Double, reps: Int): Double {
+    @JvmStatic fun OConnerMax(weight: Double, reps: Int): Double {
         if (weight < 1) throw IllegalArgumentException("Has to be positive weight")
 
         var _reps: Int = when {
@@ -78,7 +79,7 @@ object StrengthCalculations {
         return weight * (1.0 + (_reps / 40.0))
     }
 
-    fun WathanMax(weight: Double, reps: Int): Double {
+    @JvmStatic fun WathanMax(weight: Double, reps: Int): Double {
         if (weight < 1) throw IllegalArgumentException("Has to be positive weight")
 
         var _reps: Int = when {
@@ -89,7 +90,7 @@ object StrengthCalculations {
         return (100.0 * weight) / (48.8 + 53.8 * Math.pow(Math.E, (-.075 * _reps)))
     }
 
-    fun avgMax(weight: Double, reps: Int): Double {
+    @JvmStatic fun avgMax(weight: Double, reps: Int): Double {
         if (weight < 1) throw IllegalArgumentException("Has to be positive weight")
 
         var _reps: Int = when {
